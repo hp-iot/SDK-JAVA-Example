@@ -1,0 +1,13 @@
+server:
+  port: 9890
+
+logging:
+  level:
+    com.hp.message: error
+
+hpiot:
+  sdk:
+    app:
+      app-id: 16576921419934
+      app-key: 2d51552cd89bbf385ad1564d75edf924
+      app-secret: 40fa7b04155f7638b04a6194ca749b74
