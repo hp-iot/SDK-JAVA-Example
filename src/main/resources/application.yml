@@ -3,7 +3,7 @@ server:
 
 logging:
   level:
-    com.hp.message: error
+    com.hp.message: info
 
 hpiot:
   sdk:
