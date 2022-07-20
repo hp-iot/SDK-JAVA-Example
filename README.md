@@ -31,6 +31,7 @@ hpiot:
 ```
 
 #### SDK API接口 调用示例
+
 > API调用示例
 ```
 /**
@@ -39,6 +40,50 @@ hpiot:
 @Autowired
 private IApiService apiService;
 
+/**
+ * 获取App项目列表
+ *
+ * @return
+ */
+@GetMapping("getAppProjectList")
+public ApiResp<List<ProjectResult>> getAppProjectList() {
+    return apiService.getAppProjectList();
+}
+
+/**
+ * 获取分组列表
+ *
+ * @param projectId 项目id
+ * @param groupName 查询分组名称(模糊匹配)
+ * @return
+ */
+@GetMapping("getGroupList")
+public ApiResp<List<GroupResult>> getGroupList(int projectId, String groupName) {
+    return apiService.getGroupList(projectId, groupName);
+}
+
+/**
+ * 获取设备详情
+ *
+ * @param equiSno 设备SN号
+ * @return
+ */
+@GetMapping("getEquiInfoBySno")
+public ApiResp getEquiInfoBySno(String equiSno) {
+    return apiService.getEquiInfoBySno(equiSno);
+}
+
+/**
+ * 获取设备列表
+ *
+ * @param projectId      项目id
+ * @param groupId        项目分组id
+ * @param equiWorkStatus 设备状态 1 在线 2 离线 3 升级中 4 配置中
+ */
+@GetMapping("getEquiList")
+public ApiResp<List<EquiResult>> getEquiList(int projectId, int groupId, int equiWorkStatus, String dataHandleType) {
+    return apiService.getEquiList(projectId, groupId, equiWorkStatus,dataHandleType);
+}
 
 ```
 
